@@ -1,0 +1,52 @@
+collections:
+  customers:
+    target_table: public.customers
+    raw_json_column: raw_json
+    object_id_attribute: customer_id
+    mappings:
+      customer_id:
+        column: customer_id
+        type: integer
+      name:
+        column: name
+        type: text
+      signup_date:
+        column: signup_date
+        type: date
+      email:
+        column: email
+        type: text
+  orders:
+    target_table: public.orders
+    raw_json_column: raw_json
+    object_id_attribute: order_id
+    mappings:
+      order_id:
+        column: order_id
+        type: integer
+      customer_id:
+        column: customer_id
+        type: integer
+      order_date:
+        column: order_date
+        type: date
+      amount:
+        column: amount
+        type: numeric
+  products:
+    target_table: public.products
+    raw_json_column: raw_json
+    object_id_attribute: product_id
+    mappings:
+      product_id:
+        column: product_id
+        type: integer
+      name:
+        column: name
+        type: text
+      price:
+        column: price
+        type: numeric
+      created_date:
+        column: created_date
+        type: date

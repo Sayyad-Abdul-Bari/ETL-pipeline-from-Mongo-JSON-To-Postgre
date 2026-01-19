@@ -1,0 +1,81 @@
+database:
+  host: localhost
+  port: 5432
+  name: etl_db
+  user: etl_user
+  password: your_password
+  sslmode: disable
+  create_if_missing: true
+  admin_db: postgres
+
+runtime:
+  date_formats:
+    - "%Y-%m-%d"
+    - "%m/%d/%Y"
+    - "%d-%m-%Y"
+    - "%Y/%m/%d"
+    - "%Y.%m.%d"
+    - "%Y-%m-%dT%H:%M:%S"
+    - "%Y-%m-%dT%H:%M:%S%z"
+    - "%Y-%m-%dT%H:%M:%S.%fZ"
+    - "%d-%m-%Y %H:%M:%S"
+    - "%m/%d/%Y %I:%M %p"
+  date_output_format: "%Y-%m-%d"
+  datetime_output_format: "%Y-%m-%dT%H:%M:%S%z"
+  schema_path: sql/schema.sql
+  type_mappings:
+    text: TEXT
+    string: TEXT
+    varchar: TEXT
+    integer: INTEGER
+    int: INTEGER
+    bigint: BIGINT
+    smallint: SMALLINT
+    float: DOUBLE PRECISION
+    double: DOUBLE PRECISION
+    "double precision": DOUBLE PRECISION
+    numeric: NUMERIC
+    decimal: NUMERIC
+    boolean: BOOLEAN
+    bool: BOOLEAN
+    date: DATE
+    datetime: TIMESTAMPTZ
+
+audit:
+  business_columns:
+    ingested_at: ingested_at
+    source_collection: source_collection
+    status: status
+  business_column_types:
+    ingested_at: TIMESTAMPTZ
+    source_collection: TEXT
+    status: TEXT
+  audit_schema: doc_audit
+  audit_table: doc_audit.ingestion_audit
+  audit_columns:
+    ingested_at: ingested_at
+    object_id: object_id
+    source_collection: source_collection
+    object_name: object_name
+    object_status: object_status
+    missing_columns: missing_columns
+    processing_status: processing_status
+  audit_column_types:
+    ingested_at: TIMESTAMPTZ
+    object_id: TEXT
+    source_collection: TEXT
+    object_name: TEXT
+    object_status: TEXT
+    missing_columns: JSONB
+    processing_status: TEXT
+  status_values:
+    success: success
+    error: error
+    missing: missing
+  object_status_values:
+    new: NEW
+    missing: MISSING
+    already_exists: ALREADY_EXISTS
+
+logging:
+  level: INFO

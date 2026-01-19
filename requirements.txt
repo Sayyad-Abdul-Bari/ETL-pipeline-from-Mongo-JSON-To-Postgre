@@ -1,0 +1,6 @@
+psycopg2-binary
+PyYAML
+streamlit
+pymongo
+pandas
+plotly
