@@ -23,8 +23,6 @@ Example CLI command:
 Run the local UI:
 - `streamlit run streamlit_app.py`
 
-See `DOCUMENTATION.md` for a concise architecture and usage guide.
-
 What the UI does:
 - Source selection with in-place JSON upload or MongoDB export to `Data/`.
 - PostgreSQL connection + database selection/creation.
