@@ -12,8 +12,6 @@ Authoritative requirements is in `Documents/`:
 1. Install dependencies:
    - `pip install -r requirements.txt`
 2. Update database credentials in `config/app_config.yaml`.
-3. Create tables using the provided DDL:
-   - `psql -f sql/schema.sql`
 
 ## Run
 
