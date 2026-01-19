@@ -7,24 +7,12 @@ PostgreSQL in a structured, auditable, and extensible manner.
 Authoritative requirements is in `Documents/`:
 - `Documents/Basic Requirement.md`
 
-## Setup
-
-1. Install dependencies:
-   - `pip install -r requirements.txt`
-2. (Optional) Install the package for CLI usage from any directory:
-   - `pip install -e .`
-3. Update database credentials in `config/app_config.yaml`.
-4. Create tables using the provided DDL:
-   - `psql -f sql/schema.sql`
-
 ## Setup (Windows CMD)
 
 1. Install dependencies:
    - `pip install -r requirements.txt`
-2. (Optional) Install the package for CLI usage from any directory:
-   - `pip install -e .`
-3. Update database credentials in `config/app_config.yaml`.
-4. Create tables using the provided DDL:
+2. Update database credentials in `config/app_config.yaml`.
+3. Create tables using the provided DDL:
    - `psql -f sql/schema.sql`
 
 ## Run
