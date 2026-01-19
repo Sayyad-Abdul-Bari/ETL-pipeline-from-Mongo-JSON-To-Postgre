@@ -4,9 +4,7 @@ This project implements a configuration-driven ETL pipeline that ingests JSON
 documents representing multiple logical collections and loads them into
 PostgreSQL in a structured, auditable, and extensible manner.
 
-Authoritative requirements and design documents are in `Documents/`:
-- `Documents/Product Requirements Document (PRD).md`
-- `Documents/High-Level Design (HLD).md`
+Authoritative requirements is in `Documents/`:
 - `Documents/Basic Requirement.md`
 
 ## Setup
